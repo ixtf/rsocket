@@ -6,30 +6,14 @@ plugins {
 sourceCompatibility = 11
 targetCompatibility = 11
 
-dependencyManagement {
-    imports {
-        mavenBom "com.github.ixtf:bom:${bomVersion}"
-        mavenBom "io.projectreactor:reactor-bom:Dysprosium-SR11"
-    }
-
-    dependencies {
-        dependency "com.google.protobuf:protobuf-java:${protobufVersion}"
-        dependency "com.google.protobuf:protoc:${protobufVersion}"
-        dependency "io.rsocket:rsocket-core:${rsocketVersion}"
-        dependency "io.rsocket:rsocket-transport-netty:${rsocketVersion}"
-        dependency "io.rsocket.rpc:rsocket-rpc-protobuf:${rsocketRpcVersion}"
-        dependency "io.rsocket.rpc:rsocket-rpc-core:${rsocketRpcVersion}"
-    }
-}
-
 dependencies {
 //    protobuf project(':service-idl')
-//    implementation "com.google.protobuf:protobuf-java:${protobufVersion}"
-//    implementation "com.google.protobuf:protoc:${protobufVersion}"
-//    implementation "io.rsocket:rsocket-core:${rsocketVersion}"
-//    implementation "io.rsocket:rsocket-transport-netty:${rsocketVersion}"
-//    implementation "io.rsocket.rpc:rsocket-rpc-protobuf:${rsocketRpcVersion}"
-//    implementation "io.rsocket.rpc:rsocket-rpc-core:${rsocketRpcVersion}"
+    implementation "com.google.protobuf:protobuf-java:${protobufVersion}"
+    implementation "com.google.protobuf:protoc:${protobufVersion}"
+    implementation "io.rsocket:rsocket-core:${rsocketVersion}"
+    implementation "io.rsocket:rsocket-transport-netty:${rsocketVersion}"
+    implementation "io.rsocket.rpc:rsocket-rpc-protobuf:${rsocketRpcVersion}"
+    implementation "io.rsocket.rpc:rsocket-rpc-core:${rsocketRpcVersion}"
 
     testCompile "io.projectreactor:reactor-tools"
 }
