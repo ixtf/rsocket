@@ -1,0 +1,7 @@
+rootProject.name = 'rsocket'
+include 'broker'
+include 'client'
+include 'examples'
+include 'examples:protobuf-test'
+findProject(':examples:protobuf-test')?.name = 'protobuf-test'
+
