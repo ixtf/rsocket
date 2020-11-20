@@ -6,7 +6,7 @@ plugins {
     id "io.freefair.lombok" version "5.1.0"
     id "com.github.johnrengelman.shadow" version "6.0.0" apply false
     id "com.palantir.docker" version "0.25.0" apply false
-    id "com.google.protobuf" version "0.8.12" apply false
+    id "com.google.protobuf" version "0.8.13" apply false
     id "io.swagger.core.v3.swagger-gradle-plugin" version "2.1.4" apply false
 }
 
@@ -31,16 +31,7 @@ allprojects {
     dependencyManagement {
         imports {
             mavenBom "com.github.ixtf:bom:${bomVersion}"
-            mavenBom "io.projectreactor:reactor-bom:Dysprosium-SR11"
-        }
-
-        dependencies {
-            dependency "com.google.protobuf:protobuf-java:${protobufVersion}"
-            dependency "com.google.protobuf:protoc:${protobufVersion}"
-            dependency "io.rsocket:rsocket-core:${rsocketVersion}"
-            dependency "io.rsocket:rsocket-transport-netty:${rsocketVersion}"
-            dependency "io.rsocket.rpc:rsocket-rpc-protobuf:${rsocketRpcVersion}"
-            dependency "io.rsocket.rpc:rsocket-rpc-core:${rsocketRpcVersion}"
+            mavenBom "io.rsocket:rsocket-bom:1.1.0"
         }
     }
 }
